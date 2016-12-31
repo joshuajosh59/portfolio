@@ -1,0 +1,53 @@
+.page-error {
+  background-image: url("../img/error_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  &:before {
+    @include bg-parallax-overlay;
+
+    background-color: rgba($brand-primary, 0.8);
+  }
+
+  .page-content {
+    padding: $spacer-md 0;
+
+    @include breakpoint(300) {
+      padding: ($spacer-md / 2) 0;
+    }
+  }
+
+  .error-title {
+    letter-spacing: 20px;
+    text-indent: 15px;
+    line-height: 1;
+    margin: $spacer-sm 0 20px;
+
+    @include breakpoint(300) {
+      margin: ($spacer-sm / 2) 0 20px;
+    }
+  }
+
+  .error-desc {
+    margin-bottom: $spacer-sm;
+
+    @include breakpoint(300) {
+      margin-bottom: $spacer-sm / 2;
+    }
+  }
+
+  .error-footer {
+    position: relative;
+    width: 230px;
+    margin: 0 auto;
+
+    .back-link {
+      display: block;
+      position: absolute;
+      top: 16px;
+      z-index: 10;
+      left: 0;
+    }
+  }
+}

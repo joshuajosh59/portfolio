@@ -1,0 +1,147 @@
+.header-2 {
+  padding-top: 130px;
+
+  @include breakpoint(xs) {
+    padding-top: 90px;
+  }
+}
+
+#hero {
+  &.home-header {
+    height: 100%;
+    overflow: hidden;
+
+    .bg-image {
+      height: 100%;
+      background-size: cover;
+    }
+
+    .intro-text {
+      @include vertical-align(middle);
+
+      height: 750px;
+
+      .title {
+        @include breakpoint(xxs) {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+}
+
+.hero-socials {
+  @extend .list-inline, .no-mg;
+
+  .btn {
+    background-color: transparent;
+    color: rgba($white, 0.5);
+    box-shadow: none;
+
+    > i {
+      font-size: 24px !important;
+    }
+
+    margin-bottom: 10px;
+
+    &.s-facebook {
+      &:hover, &:focus {
+        background-color: #4B6BD3;
+      }
+    }
+
+    &.s-twitter {
+      &:hover, &:focus {
+        background-color: #2FD2FF;
+      }
+    }
+
+    &.s-behance {
+      &:hover, &:focus {
+        background-color: #292929;
+      }
+    }
+
+    &.s-dribbble {
+      &:hover, &:focus {
+        background-color: #EE6FA0;
+      }
+    }
+
+    &.s-linkedin {
+      &:hover, &:focus {
+        background-color: #309ACC;
+      }
+    }
+
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+}
+
+.hero-lead {
+  @extend .lead;
+
+  color: rgba($white, 0.7);
+}
+
+.back-link {
+  color: rgba($white, 0.9) !important;
+  text-transform: uppercase;
+  font-size: $mdb-font-size-small;
+  font-weight: 500;
+  position: absolute;
+  top: 25px;
+
+  > i {
+    font-size: 18px;
+    margin-right: 5px;
+    display: inline;
+  }
+}
+
+.blog-list-header {
+  background-image: url("../img/blog_header_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+
+  &:after {
+    @include bg-parallax-overlay;
+
+    background-color: rgba($brand-primary, 0.9);
+  }
+
+  @include breakpoint(xs) {
+    padding: 50px 0;
+  }
+}
+
+.blog-post-header {
+  background-image: url("../img/single_header_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  padding-bottom: 600px;
+
+  @include breakpoint(xs) {
+    padding-bottom: 560px;
+  }
+
+
+  @include breakpoint(xxs) {
+    padding-bottom: 540px;
+  }
+
+
+  &:after {
+    @include bg-parallax-overlay;
+
+    background-color: rgba($brand-primary, 0.9);
+  }
+}

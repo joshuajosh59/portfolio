@@ -1,0 +1,454 @@
+// Spacing helpers
+// --------------------------------------------------
+.no-mg {
+  margin: 0 !important;
+}
+
+.no-mg-t {
+  margin-top: 0 !important;
+}
+
+.no-mg-r {
+  margin-right: 0 !important;
+}
+
+.no-mg-b {
+  margin-bottom: 0 !important;
+}
+
+.no-mg-l {
+  margin-left: 0 !important;
+}
+
+.no-pd {
+  padding: 0 !important;
+}
+
+.no-pd-t {
+  padding-top: 0 !important;
+}
+
+.no-pd-r {
+  padding-right: 0 !important;
+}
+
+.no-pd-b {
+  padding-bottom: 0 !important;
+}
+
+.no-pd-l {
+  padding-left: 0 !important;
+}
+
+$margins: 40px, 30px, 20px, 10px, 5px;
+$margins-names: "-lg", "-md", "", "-sm", "-xs";
+
+@for $i from 1 through length($margins) {
+  $name: nth($margins-names, $i);
+  $margin: nth($margins, $i);
+
+  .mg#{$name} {
+    margin: $margin;
+  }
+
+  .pd#{$name} {
+    padding: $margin;
+  }
+
+  .mg-t#{$name} {
+    margin-top: $margin;
+  }
+
+  .mg-r#{$name} {
+    margin-right: $margin;
+  }
+
+  .mg-b#{$name} {
+    margin-bottom: $margin;
+  }
+
+  .mg-l#{$name} {
+    margin-left: $margin;
+  }
+
+  .pd-t#{$name} {
+    padding-top: $margin;
+  }
+
+  .pd-r#{$name} {
+    padding-right: $margin;
+  }
+
+  .pd-b#{$name} {
+    padding-bottom: $margin;
+  }
+
+  .pd-l#{$name} {
+    padding-left: $margin;
+  }
+}
+
+// Section paddings
+// --------------------------------------------------
+section {
+  padding: ($spacer-md / 2) 0;
+
+  @media (min-width: $screen-xs-min) {
+    padding: $spacer-sm 0;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: $spacer-md 0;
+  }
+}
+
+section.padding-xs {
+  padding: 30px 0;
+}
+
+section.padding-sm {
+  padding: $spacer-xs 0;
+
+  @media (min-width: $screen-xs-min) {
+    padding: $spacer-sm 0;
+  }
+}
+
+section.padding-lg {
+  padding: 150px 0;
+}
+
+section.padding-xl {
+  padding: 200px 0;
+}
+
+// Background helpers
+// --------------------------------------------------
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.bg-primary {
+  background-color: $brand-primary !important;
+}
+
+.bg-light {
+  background-color: $brand-light !important;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-dark {
+  background-color: $brand-dark !important;
+
+  .section-header {
+    .title {
+      color: rgba($white, 0.87);
+    }
+
+    .lead {
+      color: rgba($white, 0.54);
+    }
+  }
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: scroll;
+  background-position: center bottom;
+}
+
+.bg-parallax {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-position: center center;
+
+  @include breakpoint(xs) {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+// Font helpers
+// --------------------------------------------------
+.font-sm {
+  font-size: $mdb-font-size-small;
+}
+
+.font-md {
+  font-size: $mdb-font-size-base;
+}
+
+.font-lg {
+  font-size: $mdb-font-size-large;
+}
+
+.font-2x {
+  font-size: 2em;
+
+  @include breakpoint(xxs) {
+    font-size: 1em;
+  }
+}
+
+.font-3x {
+  font-size: 3em;
+
+  @include breakpoint(xxs) {
+    font-size: 1.5em;
+  }
+}
+
+.font-4x {
+  font-size: 4em;
+
+  @include breakpoint(xxs) {
+    font-size: 2em;
+  }
+}
+
+.font-5x {
+  font-size: 5em;
+
+  @include breakpoint(xxs) {
+    font-size: 2.5em;
+  }
+}
+
+.font-6x {
+  font-size: 6em;
+
+  @include breakpoint(xxs) {
+    font-size: 3em;
+  }
+}
+
+.font-7x {
+  font-size: 7em;
+
+  @include breakpoint(xxs) {
+    font-size: 3.5em;
+  }
+}
+
+.font-8x {
+  font-size: 8em;
+
+  @include breakpoint(xxs) {
+    font-size: 4em;
+  }
+}
+
+.font-9x {
+  font-size: 9em;
+
+  @include breakpoint(xxs) {
+    font-size: 4.5em;
+  }
+}
+
+.font-10x {
+  font-size: 10em;
+
+  @include breakpoint(xxs) {
+    font-size: 5em;
+  }
+}
+
+.font-11x {
+  font-size: 11em;
+
+  @include breakpoint(xxs) {
+    font-size: 5.5em;
+  }
+}
+
+.font-12x {
+  font-size: 12em;
+
+  @include breakpoint(xxs) {
+    font-size: 6em;
+  }
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+// Opacity helpers
+// --------------------------------------------------
+.opacity-1 {
+  @include opacity(0.1);
+}
+
+.opacity-2 {
+  @include opacity(0.2);
+}
+
+.opacity-3 {
+  @include opacity(0.3);
+}
+
+.opacity-4 {
+  @include opacity(0.4);
+}
+
+.opacity-5 {
+  @include opacity(0.5);
+}
+
+.opacity-6 {
+  @include opacity(0.6);
+}
+
+.opacity-7 {
+  @include opacity(0.7);
+}
+
+.opacity-8 {
+  @include opacity(0.8);
+}
+
+.opacity-9 {
+  @include opacity(0.9);
+}
+
+// Mobile helpers
+// --------------------------------------------------
+@include breakpoint(xxs) {
+  .hidden-xxs {
+    display: none !important;
+  }
+
+  .block-xxs {
+    width: 100%;
+    float: none;
+    display: block;
+    clear: both;
+  }
+}
+
+
+// Shadow helpers
+// --------------------------------------------------
+.shadow-z-1 {
+  @include shadow-z-1;
+
+  @include transition(0.15s);
+
+  &:hover {
+    @include shadow-z-1-hover;
+  }
+}
+
+.shadow-z-2 {
+  @include shadow-z-2;
+}
+
+.shadow-z-3 {
+  @include shadow-z-3;
+}
+
+.shadow-z-4 {
+  @include shadow-z-4;
+}
+
+.shadow-z-5 {
+  @include shadow-z-5;
+}
+
+// Responsive text aligment classes
+// --------------------------------------------------
+@media (max-width: $screen-xs-max) {
+  .text-xs-left {
+    text-align: left;
+  }
+
+  .text-xs-right {
+    text-align: right;
+  }
+
+  .text-xs-center {
+    text-align: center;
+  }
+
+  .text-xs-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .text-sm-left {
+    text-align: left;
+  }
+
+  .text-sm-right {
+    text-align: right;
+  }
+
+  .text-sm-center {
+    text-align: center;
+  }
+
+  .text-sm-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .text-md-left {
+    text-align: left;
+  }
+
+  .text-md-right {
+    text-align: right;
+  }
+
+  .text-md-center {
+    text-align: center;
+  }
+
+  .text-md-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .text-lg-left {
+    text-align: left;
+  }
+
+  .text-lg-right {
+    text-align: right;
+  }
+
+  .text-lg-center {
+    text-align: center;
+  }
+
+  .text-lg-justify {
+    text-align: justify;
+  }
+}
+
+// Border helpers
+// --------------------------------------------------
+.no-border {
+  border: 0 !important;
+}

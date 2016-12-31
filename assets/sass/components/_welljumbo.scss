@@ -1,0 +1,50 @@
+body {
+  .container,
+  .container-fluid {
+    .well.well-sm {
+      padding: 10px;
+    }
+
+    .well.well-lg {
+      padding: 26px;
+    }
+
+    .well,
+    .jumbotron {
+      background-color: #fff;
+      padding: 19px;
+      margin-bottom: 20px;
+
+      @include shadow-z-1;
+
+      border-radius: $border-radius-base;
+      border: 0;
+
+      p {
+        font-weight: 300;
+      }
+
+      @include variations(unquote(""), unquote(""), background-color, $white);
+    }
+  }
+}
+
+// Sizes
+.well-lg {
+  padding: 20px 30px;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 35px 45px;
+  }
+}
+
+.well-sm {
+  padding: 25px 35px !important;
+  border-radius: $border-radius-small;
+}
+
+.contact-section-form {
+  @media (max-width: 300px) {
+    padding: 10px 15px !important;
+  }
+}

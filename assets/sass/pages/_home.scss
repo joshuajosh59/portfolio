@@ -1,0 +1,55 @@
+// About section
+#intro-tabs {
+  .nav-tabs > li {
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+      width: 25%;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-top: $spacer-xs;
+  }
+}
+
+// Services section
+#service-tabs {
+  .nav-tabs > li {
+    width: 25%;
+  }
+}
+
+// Quotes section
+#quotes {
+  &:before {
+    @include bg-parallax-overlay;
+
+    background-color: rgba($brand-primary, 0.8);
+  }
+
+  background-image: url("../img/quotes_bg.jpg");
+}
+
+// Offers section
+#offers {
+  background-image: url("../img/offers_bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+// Contact section
+#contact {
+  @media (min-width: $screen-sm-min) {
+    background-image: url("../img/map_bg.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}

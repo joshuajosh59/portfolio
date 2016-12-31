@@ -1,0 +1,14 @@
+.counter-value {
+  font-size: 4em;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.counter-desc {
+  @extend .subtext;
+
+  @media (max-width: $screen-xs-max) {
+    margin-bottom: $spacer-md / 3;
+  }
+}

@@ -1,0 +1,54 @@
+.bg-video {
+  background-color: $brand-primary;
+  height: auto;
+  padding: 0;
+
+  &.fallback-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    backface-visibility: hidden;
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba($brand-primary, 0.8);
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .play-icon {
+    font-size: 56px;
+    margin: 0 20px;
+    display: block;
+
+    @media (min-width: 600px) {
+      line-height: 0;
+      position: relative;
+      top: 16px;
+      display: inline;
+    }
+  }
+
+  .play-icon-link {
+    color: $white;
+  }
+
+  .title {
+    margin: 200px 0;
+
+    @include breakpoint(xs) {
+      margin: 150px 0;
+    }
+  }
+}
+
+.mb_YTVPBar {
+  display: none !important;
+}

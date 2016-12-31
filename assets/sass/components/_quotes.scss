@@ -1,0 +1,67 @@
+.quote-tabs {
+  clear: both;
+
+  > li, li.active {
+    > a, a:hover, a:focus {
+      border: 0 !important;
+    }
+  }
+
+  > li {
+    float: none;
+    display: inline-block;
+
+    > a {
+      padding: 0 10px;
+
+      .tab-image {
+        @include border-radius(50%, 50%, 50%, 50%);
+
+        @include opacity(0.5);
+
+        @include transition(0.2s);
+
+        @include scale(0.8);
+
+        &:hover {
+          @include scale(1);
+        }
+
+        @include breakpoint(300) {
+          width: 40px;
+        }
+      }
+
+      .ripple-container {
+        display: none;
+      }
+    }
+
+    &.active {
+      > a {
+        .tab-image {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}
+
+.quote-text {
+  font-size: 2em;
+  line-height: 1.6;
+  color: rgba($white, 0.87);
+  font-weight: 300;
+
+  @include breakpoint(xs) {
+    font-size: 1.5em;
+  }
+
+
+  @include breakpoint(300) {
+    font-size: 1.1em;
+  }
+
+
+  margin-bottom: 0;
+}

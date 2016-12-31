@@ -1,0 +1,122 @@
+.nav-tabs {
+  background: transparent;
+  margin-bottom: 30px;
+  border: 0;
+
+  > li {
+    > a {
+      @extend .subtext;
+
+      color: $mdb-text-color-primary !important;
+      background-color: transparent !important;
+      border: 0;
+      border-bottom: 1px solid $mdb-divider-color;
+      margin: 0;
+      padding: 20px 30px;
+
+      .icon {
+        color: $mdb-text-color-light;
+      }
+
+      > .tab-label {
+        display: block;
+        text-align: center;
+      }
+
+      &:hover, &:focus {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $mdb-divider-color;
+        outline: 0;
+      }
+    }
+
+    &:hover {
+      .icon {
+        color: $mdb-text-color-primary;
+      }
+    }
+
+    &.active {
+      .icon {
+        color: $brand-primary;
+      }
+
+      background-color: transparent !important;
+
+      > a {
+        color: $brand-primary !important;
+        border: 0;
+        border-bottom: 2px solid $brand-primary;
+
+        &:hover, &:focus {
+          background-color: transparent;
+          border: 0;
+          border-bottom: 2px solid $brand-primary;
+        }
+      }
+    }
+  }
+
+  &.image-tabs {
+    > li {
+      > a {
+        border: 0;
+
+        @media (min-width: $screen-sm-min) {
+          border-right: 1px solid $mdb-divider-color;
+        }
+
+        .tab-image {
+          @include opacity(0.4);
+
+          @include transition(0.2s);
+        }
+
+        .tab-label {
+          @include breakpoint(xs) {
+            display: none;
+          }
+        }
+
+        &:hover, &:focus {
+          border-bottom: 0 !important;
+        }
+
+        @include breakpoint(xs) {
+          padding-bottom: 0;
+
+          .icon {
+            font-size: 3em;
+          }
+        }
+
+
+        @include breakpoint(xxs) {
+          padding: 0;
+        }
+
+
+        .ripple-container {
+          display: none;
+        }
+      }
+
+      &.active {
+        > a {
+          @media (min-width: $screen-sm-min) {
+            border-right: 1px solid $mdb-divider-color;
+          }
+
+          .tab-image {
+            @include opacity(1);
+          }
+        }
+      }
+
+      &:last-child > a {
+        border-right: 0;
+      }
+    }
+  }
+}

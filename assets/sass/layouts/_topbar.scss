@@ -1,0 +1,50 @@
+.topbar {
+  position: relative;
+  z-index: 100;
+  line-height: 50px;
+
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+
+.topbar-socials {
+  float: right;
+
+  a {
+    color: rgba($white, 0.7);
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  i {
+    font-size: $mdb-font-size-large;
+  }
+}
+
+.topbar-links {
+  float: left;
+
+  li {
+    &:not(:first-child) {
+      margin: 0 10px;
+    }
+
+    > a {
+      color: rgba($white, 0.7);
+
+      > i {
+        font-size: $mdb-font-size-small;
+        position: relative;
+        top: -1px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        color: rgba($white, 0.9);
+      }
+    }
+  }
+}

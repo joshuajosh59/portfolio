@@ -1,0 +1,428 @@
+.entry-metas {
+  text-transform: uppercase;
+  color: $mdb-text-color-light;
+  font-size: 13px;
+  margin: -5px 0 15px;
+
+  > span:not(:first-child):before {
+    content: "| ";
+    margin: 0 5px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.blog-post {
+  &:not(:last-child) {
+    margin-bottom: $spacer-xs;
+
+    @media (min-width: $screen-xs-min) {
+      margin-bottom: $spacer-sm;
+    }
+  }
+
+  &:not(.post-format-gallery, .single-post) .card-image {
+    display: block;
+
+    & img {
+      @include scale(1);
+
+      @include transition(1s);
+    }
+
+    &:hover img {
+      @include scale(1.1);
+    }
+  }
+
+  .card-content {
+    .btn-fab:hover {
+      @include shadow-8dp;
+    }
+
+    .title a {
+      color: $mdb-text-color-primary;
+
+      &:hover, &:focus {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+.post-spec {
+  font-size: 24px;
+
+  @include breakpoint(xxs) {
+    font-size: 18px;
+  }
+
+
+  //font-style: italic;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba($white, 0.9);
+  margin: 0;
+
+  > small {
+    color: rgba($white, 0.3);
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 16px;
+
+    @include breakpoint(xxs) {
+      font-size: 14px;
+    }
+
+
+    margin-top: 10px;
+    display: block;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 1px;
+      background: rgba($white, 0.3);
+      top: -5px;
+      position: relative;
+      margin-right: 7px;
+    }
+  }
+
+  margin: 0;
+  padding: $spacer-xs 30px;
+
+  @media (min-width: $screen-sm-min) {
+    padding: $spacer-md 30px;
+  }
+}
+
+.post-format-quote {
+  .post-spec {
+    font-style: italic;
+    border: 0;
+  }
+}
+
+.post-format-link {
+  .post-spec a {
+    color: $white;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+.carousel-nav {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+
+  > .btn {
+    display: table;
+    height: 100%;
+    position: absolute;
+    background: transparent !important;
+    font-size: 45px;
+    margin: 0;
+
+    @include transition(0.15s);
+
+    > i {
+      @include vertical-align(middle);
+
+      color: $white;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    &.prev {
+      left: 0;
+
+      @include translateX(-80%);
+    }
+
+    &.next {
+      right: 0;
+
+      @include translateX(80%);
+    }
+  }
+
+  &:hover {
+    > .btn {
+      &.prev, &.next {
+        @include translateX(0%);
+      }
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    .prev, .next {
+      transform: translateX(0%) !important;
+      -webkit-transform: translateX(0%) !important;
+      -moz-transform: translateX(0%) !important;
+      -ms-transform: translateX(0%) !important;
+      -o-transform: translateX(0%) !important;
+    }
+  }
+}
+
+.blog-sidebar {
+  .widget {
+    &:not(:last-child) {
+      margin-bottom: $spacer-md / 2;
+      padding-bottom: $spacer-md / 2;
+
+      @media (max-width: $screen-md-max) {
+        margin-bottom: $spacer-xs;
+        padding-bottom: $spacer-xs;
+      }
+    }
+
+    position: relative;
+    border-bottom: 1px solid $mdb-divider-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .widget-title {
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+  }
+
+  .widget.recent-posts {
+    .avatar {
+      float: left;
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+
+      @include border-radius(50%, 50%, 50%, 50%);
+
+      overflow: hidden;
+    }
+
+    .title {
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    ul > li:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .widget.tag-cloud {
+    li {
+      padding: 0 5px 10px 0;
+    }
+
+    .tag {
+      background-color: $white;
+      padding: 8px 14px;
+
+      &:hover, &:focus {
+        background-color: $brand-primary;
+        color: $white;
+      }
+    }
+  }
+
+  .widget.search {
+    .form-control {
+      background-color: $white;
+      padding-left: 18px;
+      padding-right: 18px;
+
+      //background-image: none;
+   
+    }
+
+    i {
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      color: $mdb-divider-color;
+    }
+  }
+
+  .widget.text {
+    .btn {
+      @include breakpoint(400) {
+        display: block;
+      }
+    }
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-top: $spacer-md / 2;
+  }
+}
+
+.single-post-wrap {
+  margin-top: -500px;
+  background-color: transparent;
+  padding-top: 0;
+
+  .card {
+    &:not(:last-child) {
+      margin-bottom: $spacer-xs;
+
+      @media (min-width: $screen-xs-min) {
+        margin-bottom: $spacer-sm;
+      }
+    }
+  }
+
+  .card-header, .card-content, .card-footer {
+    padding: 70px;
+
+    @include breakpoint(xs) {
+      padding: 30px;
+    }
+  }
+}
+
+.single-post-footer {
+  line-height: 2 !important;
+
+  ul {
+    display: inline;
+
+    @include breakpoint(xs) {
+      display: block;
+    }
+
+
+    li {
+      padding: 0 5px 0 0;
+    }
+  }
+
+  a {
+    color: $mdb-divider-color;
+
+    &:hover, &:focus {
+      color: $brand-primary;
+    }
+
+    i {
+      font-size: 23px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.author-avatar {
+  width: auto;
+  height: auto;
+  max-width: 120px;
+
+  @include border-radius(50%, 50%, 50%, 50%);
+
+  overflow: hidden;
+
+  @include breakpoint(xs) {
+    margin-bottom: 30px;
+  }
+}
+
+.comment {
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint(300) {
+    .media-left {
+      display: none;
+    }
+
+    .media-body small {
+      display: block;
+    }
+  }
+
+
+  &.level-2 {
+    margin-top: 50px;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+}
+
+.comment-avatar {
+  width: 64px;
+  height: 64px;
+  margin-right: 40px;
+
+  @include breakpoint(xs) {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+
+  @include border-radius(50%, 50%, 50%, 50%);
+
+  overflow: hidden;
+  display: block;
+}
+
+.add-comment .collapsing {
+  @include transition-duration(0.01s);
+}
+
+.reply-link {
+  text-transform: uppercase;
+  font-size: $mdb-font-size-small;
+  font-weight: 500;
+  color: $mdb-text-color-light;
+
+  > i {
+    font-size: $mdb-font-size-small;
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+  }
+}
+
+.related-post {
+  @include breakpoint(xs) {
+    margin-bottom: 30px;
+  }
+}
+
+.single-post-nav {
+  > div {
+    width: 50%;
+    float: left;
+
+    @include breakpoint(400) {
+      width: 100%;
+      float: none;
+    }
+
+
+    &.prev-post .btn {
+      text-align: left;
+    }
+
+    &.next-post .btn {
+      text-align: right;
+    }
+  }
+}

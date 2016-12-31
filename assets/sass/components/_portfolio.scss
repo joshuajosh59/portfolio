@@ -1,0 +1,121 @@
+.portfolio-grid {
+  margin: 0 auto $spacer-sm;
+
+  @include breakpoint(xs) {
+    margin-bottom: 0;
+  }
+}
+
+/* clear fix */
+.portfolio-grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.portfolio-item {
+  @extend .col-lg-3, .col-md-4, .col-sm-6, .col-xs-12;
+
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  .mask {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: relative;
+    display: block;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($brand-primary, 0.9);
+      z-index: 1000;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include opacity(0);
+
+      @include transition(0.1s);
+    }
+
+    .btn-fab {
+      position: absolute !important;
+      top: 40%;
+      left: 40%;
+      display: block;
+      z-index: 1010;
+
+      @include scale(0);
+
+      @include transition(0.3s);
+
+      @include shadow-z-2;
+
+      &, &:hover, &:focus {
+        background-color: $white !important;
+      }
+    }
+
+    img {
+      width: auto;
+
+      //height: 100%;
+
+      @extend .img-responsive;
+
+      @include breakpoint(xs) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &:hover {
+    .mask {
+      &:after {
+        @include opacity(1);
+      }
+
+      .btn-fab {
+        @include scale(1);
+      }
+    }
+  }
+}
+
+.portfolio-item--height2 {
+  height: 400px;
+
+  .mask img {
+    position: absolute;
+    height: 100%;
+  }
+
+  @include breakpoint(xs) {
+    height: auto;
+  }
+}
+
+.filter-button-group .btn {
+  @include breakpoint(smmax) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  @include breakpoint(300) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.modal-content {
+  border-radius: 2px !important;
+}
